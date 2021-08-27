@@ -3,8 +3,16 @@ var $ = function (id) { return document.getElementById(id); };
 var volunteerArray = [];
 
 var displayVolunteers = function () {   
+    var temp = "";
+    var b = 1;
+        for (var a = 0; a < volunteerArray.length; a++)
+        {
+            temp += b + " " + volunteerArray[a] + "\n"; b++;
+         }
+ $("volunteerList").value = temp;
+
     // display the volunteers in the text area
-    $("volunteerList").value = volunteerArray.join("\n");
+   // $("volunteerList").value = volunteerArray.join("\n");
 
 	// comment out the line above change this to a loop instead to loop through the array.
 	
@@ -30,10 +38,14 @@ var addVolunteer = function () {
 
 var deleteVolunteer = function () {
     // get the data from the form (hint: use the same format as from the add).
-
-    // remove the string from the array (hint, loop through the entire list, compare the string with the item in the array.
-	
-   
+        var remove = $("first_name").value + " " + $("last_name").value;
+        for (var a = 0; a < volunteerArray.length; a++)
+        {
+            if (remove == volunteerArray[a])
+            {
+                remove = volunteerArray.splice(a,1);
+            }
+        }
 	 
     // display the volunteers and clear the add form
     displayVolunteers();
