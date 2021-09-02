@@ -17,20 +17,24 @@
                 </li>
                 <li><a href="invitation.html">Invitation</a>
                 </li>
-				<li><a href="volunteer.html">Volunteers</a>
+				        <li><a href="volunteer.html">Volunteers</a>
                 </li>
                 <li><a href="gallery.html"  class="active">Gallery</a>
                 </li>
                 <li><a href="registration.html">Registration</a>
                 </li>
             </ul>
-
         </nav>
     </header>
+
     <section id="gallery">
+        <!--This section has been modified to make the images larger 
+        when you roll over them with the mouse using onmouseover="bigImg(this)" 
+        and images smalleer onmouseout="normalImg(this)" to return to normal size.-->
 
 <div class="gallery">
   <a target="_blank" href="images/firefighter.jpg">
+    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)"
     <img src="images/firefighter.jpg" alt="firefighter" width="300" height="200">
   </a>
   <div class="desc">Add a description of the image here</div>
@@ -38,6 +42,7 @@
 
 <div class="gallery">
   <a target="_blank" href="images/work.jpg">
+    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" 
     <img src="images/work.jpg" alt="work" width="300" height="200">
   </a>
   <div class="desc">Add a description of the image here</div>
@@ -45,6 +50,7 @@
 
 <div class="gallery">
   <a target="_blank" href="images/silhouette.jpg">
+    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" 
     <img src="images/silhouette.jpg" alt="silhouette" width="300" height="200">
   </a>
   <div class="desc">Add a description of the image here</div>
@@ -52,9 +58,28 @@
 
 <div class="gallery">
   <a target="_blank" href="images/event.jpg">
+    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" 
     <img src="images/event.jpg" alt="event" width="300" height="200">
   </a>
   <div class="desc">Add a description of the image here</div>
+
+  <!--The Function BigImg()is Triggered When The User Mouse Pointer Is Moved 
+    Over The Image. This Function Enlarges The Image -->
+  <!--The Function NormalImg()is Triggered When The Mouse Pointer Is Moved 
+    Out Of The Image. That Function Sets The Height And Width Of The Image 
+    to a pre determined set or back to the original size --> 
+
+  <script> 
+    function bigImg(x) { 
+    x.style.height = "400px"; 
+    x.style.width = "600px"; 
+    } 
+    
+    function normalImg(x) { 
+    x.style.height = "250px"; 
+    x.style.width = "400px"; 
+    } 
+    </script>
 </div>
 
     </section>

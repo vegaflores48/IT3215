@@ -4,10 +4,42 @@
 <head>
     <title>Invitation Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+
 </head>
 
 <body>
     <header>
+            //adding some style to center the banner 
+    <section id="bannerImages" style="position: top; text-align: center;">
+
+        <img src="images/banner1.jpg" id="unit3" alt="Banner"/>
+        <!--<img src="images/banner2.jpg" id="unit3" alt="Banner"/>
+        <img src="images/banner3.jpg" id="unit3" alt="Banner"/> -->
+
+    <script>
+            //java script onload event handler 
+        window.onload = rotate;
+
+            //declare variable 
+        var theExchange = 0;
+        var exImages = new Array("images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg");
+
+            //function to rotate the images 
+        function rotate() {
+            theExchange++;
+            if (theExchange == exImages.length) {
+               theExchange = 0; 
+            }
+            document.getElementById("unit3").src = exImages[theExchange];
+
+            setTimeout(rotate, 3*1000);
+        }
+    
+
+    </script>   
+
+    </section>
+
         <div class="top">
             <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
         </div>
@@ -27,12 +59,7 @@
 
         </nav>
     </header>
-    <section id="bannerImages">
-	Banner Images<br/>
-<img src="images/banner1.jpg" alt="Banner"/>
-<img src="images/banner2.jpg" alt="Banner"/>
-<img src="images/banner3.jpg" alt="Banner"/>
-    </section>
+
 
 
     <footer>This events site is for IT3515 tasks.
