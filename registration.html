@@ -2,15 +2,13 @@
 <html lang="en-US">
 
 <head>
-    <title>A4 - Registration Page</title>
+    <title> Registration Page </title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <meta charset="utf-8"/>
-    <script src="js/registration.js"></script>
-    
+    <script src="registration.js"></script>   
 </head>
 
-<body onload='document.regform.userID.focus()'>
-
+<body>
     <header>
         <div class="top">
             <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
@@ -28,93 +26,51 @@
                 <li><a href="registration.html" class="active">Registration</a>
                 </li>
             </ul>
-
         </nav>
     </header>
-    <section id="pageForm"> <h2> Registration </h2>
-        <!-- File will load after successful validation --> 
-        <!-- When user clicks submit button, the onsubmit function is triggered but will 
-        not render completed form if the return is false. --> 
 
-<form name="regform" onsubmit="return validate()"> 
+    <section id="pageForm"> <h2> Enter your information </h2>
+        <form action="/registration.html" onsubmit="return validate()" method="GET">
 
-    <!-- UserID field --> 
-    <label for="userID"><span style="color: red">* </span>User ID:</label> <!-- 
-    Label which identifies the field as required. --> 
-    <input type="text" id="userID" name="userID" placeholder="Create User Name(Must only contain letters and numbers)" required/> 
-    <!-- Prompts user to create/enter a userID. --> 
-    <span id="erroruserID"></span><br> 
-    <!-- Return Error if User ID not created. --> 
+            <label for="userName">Username:</label>
+            <label id="userNameWarning"></label>
+            <input type="text" name="userName" id="userName" placeholder="Enter your Username" />
 
-<!-- Password field --> 
-<label for="password"><span style="color: red">* </span>Password:</label> 
-<!-- Label which identifies the input field. --> 
-<input type="password" id="password" name="password" placeholder="Create Password (Must contain a minimum of 8 characters)" required/> 
-<!-- Prompts user to create a password. --> 
-<span id="errorpassword"></span><br> 
-<!-- Return Error if password does not meet all requirements --> 
-<!-- Confirm password field --> 
-<label for="passwordVerify"><span style="color: red">* </span>Verify 
-Password:</label> 
-<!-- Label that identifies input field. --> 
-<input type="password" id="passwordVerify" name="passwordVerify" placeholder="Enter Password again (Must match password entered above)" required/> 
-<!-- prompts user to verify previously entered password. --> 
-<span id="errorpasswordVerify"></span><br> 
-<!-- Return Error if password does not match previously entered password --> 
+            <label for="password">Password:</label>
+            <label id="passwordWarning"></label>
+            <input type="text" name="password" id="password" placeholder="Enter your Password" /> 
 
-<!-- First name field --> 
-<label for="firstName"><span style="color: red">* </span>First Name:</label>
-<!-- Label that identifies input field. --> 
-<input type="text" id="firstName" name="firstName" placeholder="Enter First Name" required/> 
-<!-- Prompts user to enter a first name. --> 
-<span id="errorfirstName"></span><br> 
-<!-- Return Error if First Name not entered. --> 
+            <label for="passwordVerify">Verify your Password:</label>
+            <label id="passwordVerifyWarning"></label>
+            <input type="text" name="passwordVerify" id="passwordVerify" placeholder="Enter your Password Again" />
 
-<!-- Last name field --> 
-<label for="lastName"><span style="color: red">* </span>Last Name:</label> 
-<!-- Label that identifies input field. --> 
-<input type="text" id="lastName" name="lastName" placeholder="Enter Last Name" required/> 
-<!-- Prompts user to enter a last name. --> 
-<span id="errorlastName"></span><br> 
-<!-- Return Error if Last Name is not entered --> 
+            <label for="firstName">First Name:</label>
+            <label id="firstNameWarning"></label>
+            <input type="text" name="firstName" id="firstName" placeholder="Enter your First Name" /> 
+            
+            <label for="lastName">Last Name:</label>
+            <label id="lastNameWarning"></label>
+            <input type="text" name="lastName" id="lastName" placeholder="Enter your Last Name" /> 
+            
+            <label for="email">Email:</label>
+            <label id="emailWarning"></label>
+            <input type="text" name="email" id="email" placeholder="Enter your Email Address" />
 
-<!-- Email field --> 
-<label for="email"><span style="color: red">* </span>Email Address:</label> 
-<!-- Label that identifies input field. --> 
-<input type="text" id="email" name="email" placeholder="Enter Email Address(Example: Myname@gmail.com)" required/> 
-<!-- Prompts user to enter an email address in the specified format. --> 
-<span id="erroremail"></span><br> 
-<!-- Return Error if email not entered or proper format. -->
+            <label for="phoneNumber">Phone Number:</label>
+            <label id="phoneNumberWarning"></label>
+            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Enter your Phone Number" /> 
 
-<!-- Phone number field --> 
-    <label for="phoneNumber"><span style="color: red">* </span>Phone Number:</label> 
-    <!-- Label that identifies input field. --> 
-    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number (Example:(000) 000-0000)" required/> 
-    <!-- Prompts user to enter a phone number in the specified format. --> 
-    <span id="errorphoneNumber"></span><br> 
-    <!-- Return Error if phone number 
-    not entered and if not entered in the proper format. --> 
+            <label for="signUpNewsletter">Sign up for Newsletter:</label>
+            <input type="radio" name="signUpNewsletter" id="signUpNewsletter" value="Yes" checked> Yes
+            <input type="radio" value="No" > No 
 
-    <!-- Newsletter subscription radio buttons --> 
-<label><span style="color: red">* </span>Newsletter Subscription:</label> 
-<!--Label that identifies radio button options. --> 
-    <input type="radio" id="Yes" name="signUpNewsletter" value="Yes"> Yes 
-    <!-- Option to select yes. --> 
-    <input type="radio" id="No" name="signUpNewsletter" value="No"> No 
-    <!-- Option to select no. --> 
-    <span id="errorsignUpNewsletter"></span><br> 
-    <!-- Return Error Advice if an option is not selected by the user.--> 
-    <!-- Submit button --> 
-    <input type="submit" value="Next step" /> 
-    <!-- Indicates all required fields before form can be properly submitted. --> 
-    <label style="font-size:14px; color:red; font-style:italic;">* Required 
-    Field.</label> 
- 
-</form>
+        <input type="submit" formaction="confirm.html" value="Next step">
+
+        </form>
     </section>
 
-    <footer>This events site is for IT3515 tasks.
-    </footer>
+    <footer>This events site is for IT3515 tasks.</footer>
+
 </body>
 
 </html>
